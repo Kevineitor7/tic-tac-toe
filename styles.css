@@ -1,0 +1,230 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #18122B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    color: white;
+    bodrder: 1px solid white;
+    width: 70%;
+    height: 95%;
+    padding: 10px;
+    display: flex;;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.board {
+    borderr: 1px solid white;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.anim-show {
+    animation: anim-show 2s ease-in-out forwards;
+}
+
+.scale {
+}
+
+.grid {
+    bordser: 1px solid white;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 200px);
+    grid-template-rows: repeat(3, 1fr);
+    opacity: 0.1;
+}
+
+.grid div {
+    border: 3px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: arial;
+}
+
+.x::after {
+    content: 'X';
+    font-size: 10rem;
+    color: #0E8388;
+    transform: scale(1);
+    animsation: scale 1s ease-in-out 3
+}
+
+.o::after {
+    content: 'O';
+    font-size: 10rem;
+    color: #CD1818;
+    transform: scale(1);
+}
+
+div[id='3'].o::after {
+    transform: scale(1.0);
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.grid div:nth-child(1), .grid div:nth-child(2), .grid div:nth-child(3) {
+    border-top: none;
+}
+
+.grid div:nth-child(3), .grid div:nth-child(6), .grid div:nth-child(9) {
+    border-right: none;
+}
+
+.grid div:nth-child(7), .grid div:nth-child(8), .grid div:nth-child(9) {
+    border-bottom: none;
+}
+
+.grid div:nth-child(1), .grid div:nth-child(4), .grid div:nth-child(7) {
+    border-left: none;
+}
+
+.bottom {
+    display: flex;
+    justify-content: space-evenly;
+    height: 20%;
+    bordser: 1px solid red;
+    padding: 4px;
+}
+
+.controls {
+    bordder: 1px solid white;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+    gap: 30px;
+    order: 2;
+}
+
+.reload {
+    border: 2px solid white;
+    width: 8%;
+    min-width: 50px;
+    border-radius: 120px;
+    text-align: center;
+    font-size: 2.5rem;
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.game-modes {
+    bordeer: 1px solid white;
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+}
+
+.game-modes button {
+    border: 1px solid white;
+    padding: 10px;
+    background-color: transparent;
+    color: white;
+    width: 200px;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+.game-modes .two-play:active, .game-modes .start:active, .reload:active  {
+    transform:scale(0.9)
+}
+
+.game-modes .computer {
+    opacity: 0.6;
+}
+
+.player-names {
+    display: flex;
+    gap: 80px;
+}
+
+.game-modes input {
+    padding: 12px;
+    width: 200px;
+    font-size: 1.1rem;
+    background-color: #3A1078;
+    color: white;
+    border: 1px solid white;
+}
+
+.game-modes input::placeholder {
+    color: white;
+    opacity: 0.7;
+}
+
+.player1, .player2 {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.show {
+    visibility: visible;
+}
+
+.hide {
+    display: none;
+}
+
+.player1 {
+    order: 1;
+}
+
+.player1-name {
+    color: #14ced4;
+    font-size: 1.3rem;
+}
+
+.player2-name {
+    color: #CD1818;
+    font-size: 1.3rem;
+}
+
+.player2 {
+    order: 3;
+}
+
+.player1-score, .player2-score {
+    font-size: 2rem;
+}
+
+.venga {
+    opacity: 0
+}
+
+@keyframes anim-show {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes scale {
+    50% {
+        transform: scale(1.4);
+    }
+    to {
+        transform: scale(1);
+    }
+}
