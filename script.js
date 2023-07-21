@@ -173,6 +173,6 @@ function nextRound() {
         game = true
         playerOneScore.classList.remove('venga', 'anim-show')
         playerTwoScore.classList.remove('venga', 'anim-show')
-      }, 3000);
+      }, 4000);
 }
 
